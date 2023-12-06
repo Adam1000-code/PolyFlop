@@ -1487,6 +1487,7 @@ MonoBehaviour:
   maxTime: 1
   pipes: {fileID: 5377078316935452165, guid: f5e3af66ac3a02942ad30b9b0a2785ad, type: 3}
   height: 1
+  endingChance: 0
 --- !u!4 &1457849884
 Transform:
   m_ObjectHideFlags: 0
@@ -2349,6 +2350,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameOverCanvas: {fileID: 1668992163}
   ScoreCanvas: {fileID: 1870767418}
+  spawner: {fileID: 1457849883}
+  waitTimer: 0
 --- !u!4 &1976743604
 Transform:
   m_ObjectHideFlags: 0

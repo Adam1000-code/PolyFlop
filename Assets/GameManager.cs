@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
 {
     public GameObject GameOverCanvas;
     public GameObject ScoreCanvas;
-
+    public PipeSpawner spawner;
+    public float waitTimer;
     public void Start()
     {
+        waitTimer = 0;
         GameOverCanvas.SetActive(false);
         ScoreCanvas.SetActive(true);
         Time.timeScale = 1;
@@ -38,16 +40,14 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(Score.score == 1000)
+        if(Score.score == 1000 && spawner.endingChance >= 95)
         {
-            StartCoroutine(WaitAndSwitch());
+            waitTimer += Time.deltaTime;
+
+            if(waitTimer >= 4.5f)
+            {
+                SceneManager.LoadScene("Ending");
+            }
         }
-    }
-
-    IEnumerator WaitAndSwitch()
-    {
-        yield return new WaitForSeconds(4);
-
-        SceneManager.LoadScene("Ending");
     }
 }

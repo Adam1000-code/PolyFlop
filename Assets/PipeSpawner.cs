@@ -8,6 +8,7 @@ public class PipeSpawner : MonoBehaviour
     private float timer = 0;
     public GameObject pipes;
     public float height;
+    public int endingChance;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +16,7 @@ public class PipeSpawner : MonoBehaviour
         newPipe.transform.position = transform.position + new Vector3(0, Random.Range(-height, height), 0);
         Destroy(newPipe, 15);
         maxTime = 1.3f;
+        endingChance = Random.Range(0, 100);
         height = 1f;
         PipeMove.speed = 5f;
     }
@@ -66,7 +68,7 @@ public class PipeSpawner : MonoBehaviour
             PipeMove.speed = 5.7f;
         }
 
-        if(Score.score == 997)
+        if(Score.score == 997 && endingChance >= 95)
         {
             gameObject.SetActive(false);
         }
