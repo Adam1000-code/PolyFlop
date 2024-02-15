@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public GameObject GameOverCanvas;
     public GameObject ScoreCanvas;
     public PipeSpawner spawner;
+    public GameObject endingPlatform;
     public float waitTimer;
     public void Start()
     {
@@ -46,8 +47,12 @@ public class GameManager : MonoBehaviour
 
             if(waitTimer >= 4.5f)
             {
-                SceneManager.LoadScene("Ending");
+                Ending();
             }
         }
+    }
+
+    public void Ending()
+    {
     }
 }
