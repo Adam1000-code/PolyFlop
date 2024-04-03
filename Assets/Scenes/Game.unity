@@ -2435,6 +2435,7 @@ MonoBehaviour:
   GameOverCanvas: {fileID: 1668992163}
   ScoreCanvas: {fileID: 1870767418}
   spawner: {fileID: 1457849883}
+  endingPlatform: {fileID: 0}
   waitTimer: 0
 --- !u!4 &1976743604
 Transform:
