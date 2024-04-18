@@ -1,2 +1,2 @@
 # PolyFlop
-> A Flappy Bird clone I made in Unity. There are only going to be 3 major updates(initial release obviously not included). There are 3 updates remaining before it's no longer being updated by me or any other developers.
+A Flappy Bird clone I made in Unity. There is only going to be one major update before I move on from this game.
