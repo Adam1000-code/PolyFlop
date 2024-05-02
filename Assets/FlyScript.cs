@@ -22,7 +22,7 @@ public class FlyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0) || Input.GetButtonDown("Jump"))
+        if(Input.GetMouseButtonDown(0) && !isGrounded || Input.GetButtonDown("Jump") && !isGrounded)
         {
             rb.velocity = Vector2.up * velocity;
             jump.Play();
