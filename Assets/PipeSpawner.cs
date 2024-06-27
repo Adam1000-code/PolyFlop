@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PipeSpawner : MonoBehaviour
@@ -33,7 +34,7 @@ public class PipeSpawner : MonoBehaviour
         }
         timer += Time.deltaTime;
 
-        if(Score.score == 50)
+        /*if(Score.score == 50)
         {
             maxTime = 1.2f;
             height = 1.1f;
@@ -71,6 +72,51 @@ public class PipeSpawner : MonoBehaviour
         if(Score.score == 997 && endingChance >= 95)
         {
             gameObject.SetActive(false);
+        }*/
+
+        switch(Score.score)
+        {
+            case 0:
+                maxTime = 1.3f;
+                height = 1f;
+                PipeMove.speed = 5f;
+                break;
+            case 50:
+                maxTime = 1.2f;
+                height = 1.1f;
+                PipeMove.speed = 5.3f;
+                break;
+            case 100:
+                maxTime = 1.1f;
+                height = 1.3f;
+                PipeMove.speed = 5.4f;
+                break;
+            case 250:
+                maxTime = 1f;
+                height = 1.3f;
+                PipeMove.speed = 5.5f;
+                break;
+            case 500:
+                maxTime = 1f;
+                height = 1.35f;
+                PipeMove.speed = 5.5f;
+                break;
+            case 700:
+                maxTime = 0.9f;
+                height = 1.37f;
+                PipeMove.speed = 5.7f;
+                break;
+            case 997:
+                if(endingChance >= 95)
+                {
+                    gameObject.SetActive(false);
+                }
+                break;
+            /*default:
+                maxTime = 1.3f;
+                height = 1f;
+                PipeMove.speed = 5f;
+                break;*/
         }
     }
 }

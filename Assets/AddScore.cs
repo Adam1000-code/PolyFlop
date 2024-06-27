@@ -12,13 +12,26 @@ public class AddScore : MonoBehaviour
 
     private void Update()
     {
-        if(Time.timeScale == 1)
+        /*if(Time.timeScale == 1)
         {
             scoreSound.mute = false;
         }
         else
         {
             scoreSound.mute = true;
+        }*/
+
+        switch(Time.timeScale)
+        {
+            case 1:
+                scoreSound.mute = false;
+                break;
+            case 0:
+                scoreSound.mute = true;
+                break;
+            default:
+                //scoreSound.mute = false;
+                break;
         }
     }
 
