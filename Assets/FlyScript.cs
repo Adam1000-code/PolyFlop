@@ -24,7 +24,7 @@ public class FlyScript : MonoBehaviour
     {
         if(Input.GetMouseButtonDown(0) && !isGrounded || Input.GetButtonDown("Jump") && !isGrounded)
         {
-            rb.velocity = Vector2.up * velocity;
+            rb.linearVelocity = Vector2.up * velocity;
             jump.Play();
         }
 
@@ -33,7 +33,7 @@ public class FlyScript : MonoBehaviour
             return;
         }
 
-        transform.rotation = Quaternion.Euler(0, 0, rb.velocity.y * rotationSpeed);
+        transform.rotation = Quaternion.Euler(0, 0, rb.linearVelocity.y * rotationSpeed);
     }
 
     private void OnCollisionEnter2D(Collision2D other)
